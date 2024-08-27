@@ -10,4 +10,4 @@ const InitializeDB = async () => {
     ])
 }
 
- module.exports  = {InitializeDB}
+module.exports  = {InitializeDB}
