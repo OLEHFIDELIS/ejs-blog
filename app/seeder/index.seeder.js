@@ -39,12 +39,11 @@ const users = [
   ];
 
 
-
- const seedRecords = async () => {
+const seedRecords = async () => {
     for (const element of users) {
-        await createUser(element);
-     }
+      await createUser(element);
+   }
+  
+}
 
- }
-
- module.exports = seedRecords;
+module.exports = seedRecords

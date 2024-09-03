@@ -105,11 +105,11 @@ const blogPosts = [
 ];
 
 
-const seedRecords = async () => {
+const postSeedRecords = async () => {
  
    for (const element of blogPosts) {
        await createPost(element); 
    }  
  }
 
- module.exports = seedRecords;
+ module.exports = postSeedRecords;

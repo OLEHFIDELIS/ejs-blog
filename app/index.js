@@ -3,7 +3,8 @@ const express = require("express");
 require('dotenv').config()
 const path = require("path");
 const {InitializeDB} = require("../app/database/init");
-const seedRecords = require("./seeder/index.seeder")
+const seedRecords = require("./seeder/index.seeder");
+const postSeedRecords = require("./seeder/post.seeder");
 const app = express();
 const PORT = 3000
 
@@ -130,6 +131,7 @@ app.get("/seed-data", async (req, res) => {
     try {
         if(process.env.ENVIROMENT == "dev"){
             await seedRecords();
+            await postSeedRecords();
         }
         return res.json({message:"Seed Worked"});
     } catch (e) {
@@ -155,10 +157,7 @@ app.get("/post/:id", (req, res) => {
 
 app.listen(PORT, async() => {
     await InitializeDB();
-    if(process.env.ENVIROMENT == "dev"){
-        await seedRecords();
-    }
-    console.log("Listening to PORT " + PORT);
+   console.log("Listening to PORT " + PORT);
 })
 
 // -- MVC DESIGN PATTERN
