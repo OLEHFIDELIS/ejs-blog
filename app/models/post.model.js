@@ -37,7 +37,7 @@ const Post = Db.define("Post", {
         allowNull: false,
     },
     tags: {
-        type:DataTypes.STRING,
+        type:DataTypes.TEXT,
         allowNull: false,
     },
 },{

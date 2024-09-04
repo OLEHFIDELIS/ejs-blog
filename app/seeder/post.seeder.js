@@ -1,9 +1,8 @@
-const {createPost} = require("../services/post.service");
+const { createPost } = require("../services/post.service");
 
 
 const blogPosts = [
     {
-        id: "1e21c09a-1234-4f09-8f9e-1234567890ab",
         title: "The Future of Artificial Intelligence: Trends to Watch in 2024",
         author: "Sarah Johnson",
         authorDescription: "Sarah Johnson is a leading tech journalist with a passion for artificial intelligence and emerging technologies. She has been writing about the tech industry for over a decade and is known for her insightful analysis and forward-thinking perspectives.",
@@ -23,7 +22,6 @@ const blogPosts = [
         tags: ["AI", "Machine Learning", "Technology Trends"]
     },
     {
-        id: "2a34f09b-5678-4b19-8a7e-9876543210cd",
         title: "5G Technology: How It's Changing the World",
         author: "Michael Lee",
         authorDescription: "Michael Lee is a technology analyst and writer who specializes in telecommunications and connectivity advancements. With a background in electrical engineering, Michael provides deep insights into the technological transformations shaping our connected world.",
@@ -43,7 +41,6 @@ const blogPosts = [
         tags: ["5G", "Connectivity", "Innovation"]
     },
     {
-        id: "3b56d78c-9012-4c98-9b7e-3456789012ef",
         title: "Cybersecurity in 2024: Top Threats and How to Stay Safe",
         author: "Jessica Green",
         authorDescription: "Jessica Green is a cybersecurity expert and consultant with over 15 years of experience in the field. She regularly shares her knowledge on protecting digital assets and staying ahead of cyber threats through her writing and speaking engagements.",
@@ -63,7 +60,6 @@ const blogPosts = [
         tags: ["Cybersecurity", "Threats", "Online Safety"]
     },
     {
-        id: "4d67e89d-3456-4d21-8b9e-4567890123gh",
         title: "Quantum Computing: Breaking Down the Basics",
         author: "David Smith",
         authorDescription: "David Smith is a physicist and technology writer with a focus on quantum computing and advanced computing technologies. His work demystifies complex scientific concepts, making them accessible to a broad audience.",
@@ -83,7 +79,6 @@ const blogPosts = [
         tags: ["Quantum Computing", "Technology", "Innovation"]
     },
     {
-        id: "5e78f90e-6789-4e32-9b7e-5678901234ij",
         title: "The Rise of Blockchain: Beyond Cryptocurrencies",
         author: "Emily White",
         authorDescription: "Emily White is a blockchain strategist and writer known for her expertise in decentralized technologies and their applications beyond cryptocurrencies. She advises startups and established companies on integrating blockchain solutions to drive innovation and efficiency.",
@@ -106,10 +101,16 @@ const blogPosts = [
 
 
 const postSeedRecords = async () => {
- 
-   for (const element of blogPosts) {
-       await createPost(element); 
-   }  
- }
+     console.log("hello")
+    for (const element of blogPosts) {
+        console.log(element)
+        //    await createPost(element); 
+        delete element.authorDescription;
+        delete element.authorThumbnail;
+        delete element.authorSocialMedia;
+       const data = await createPost({ ...element, tags: JSON.stringify(element.tags) });
+       console.log(data)
+    }
+}
 
- module.exports = postSeedRecords;
+module.exports = postSeedRecords;

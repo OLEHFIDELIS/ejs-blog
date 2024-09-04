@@ -129,13 +129,17 @@ app.get("/", (req, res) => {
 
 app.get("/seed-data", async (req, res) => {
     try {
+        await postSeedRecords();
         if(process.env.ENVIROMENT == "dev"){
-            await seedRecords();
-            await postSeedRecords();
+            // await seedRecords();
+            console.log("Running")
+           
         }
         return res.json({message:"Seed Worked"});
     } catch (e) {
+        console.log(e)
         return res.render("pages/404", { message: e.message });
+
     }
 })
 
