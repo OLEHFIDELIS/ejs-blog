@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS blogger.`users` (
  `password` VARCHAR(255) NOT NULL,
  `createdAt` DATETIME NOT NULL,
  `updatedAt` DATETIME NOT NULL,
- PRIMARY KEY (`id`))
+ PRIMARY KEY (`id`));
 
  CREATE TABLE IF NOT EXISTS blogger.`posts` (
 `id` INTEGER AUTO_INCREMENT ,
@@ -23,5 +23,5 @@ CREATE TABLE IF NOT EXISTS blogger.`users` (
  `tags` VARCHAR(255) NOT NULL,
 `createdAt` DATETIME NOT NULL,
  `updatedAt` DATETIME NOT NULL,
- PRIMARY KEY (`id`))
+ PRIMARY KEY (`id`));
  
