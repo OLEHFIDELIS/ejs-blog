@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS blogger.`users` (
  `readTime` VARCHAR(255),
  `shares` INTEGER,
 `bannerImage` VARCHAR(255) NOT NULL,
- `tags` VARCHAR(255) NOT NULL,
+ `tags` TEXT NOT NULL,
 `createdAt` DATETIME NOT NULL,
  `updatedAt` DATETIME NOT NULL,
  PRIMARY KEY (`id`));
