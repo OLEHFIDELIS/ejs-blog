@@ -12,10 +12,6 @@ const Post = Db.define("Post", {
         type:DataTypes.STRING,
         allowNull: false,
     },
-    category: {
-        type:DataTypes.TEXT,
-        allowNull: false,
-    },
     date: {
         type: DataTypes.DATE,
         allowNull: false,

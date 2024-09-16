@@ -14,11 +14,6 @@ const Category = Db.define("Category",{
     description:{
         type: DataTypes.STRING
     },
-    postid:{
-        type: DataTypes.INTEGER,
-        allowNull: false
-    }
-
  }, {
    tableName: "categories",
    timestamps: true

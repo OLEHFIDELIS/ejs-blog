@@ -9,6 +9,9 @@ const createPost = async (postData) => {
 
 }
 
+const getAllPosts = async ()=> {
+  const allposts = Post.findAll({order: ["createdAt","disc"]});
+  return allposts
+}
 
-
-module.exports = {createPost}
+module.exports = {createPost,getAllPosts}
