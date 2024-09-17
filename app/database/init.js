@@ -11,9 +11,9 @@ const InitializeDB = async () => {
     // Post.hasOne(Category);
 
     await Promise.all([
-        User.sync({alter:true}),
-        Post.sync({alter:true}),
-        Category.sync({alter:true}),
+        User.sync({alter:false}),
+        Post.sync({alter:false}),
+        Category.sync({alter:false}),
     ])
 }
 
